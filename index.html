@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>Test Contact</title>
+<link rel="stylesheet" type="text/css" href="css/testContact.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+	<div class="wrapper">
+    	<header>
+        	<div class="headerWrapper container-fluid bg-secondary">
+        		<h1 class="text-uppercase text-center text-white">Test Contact</h1>
+            </div>
+        </header>
+        <section>
+        	<div class="container">
+                <div id="app">
+                    <div class="contact-list">
+                        <button type="submit" class="add-contact" name="add-contact"  v-on:click.prevent="addContact()">Add Contact</button>
+                        <ul>
+                            <li class="contact-panel border border-primary rounded" v-for="item in users.result">
+                            	<div class="row">
+                                    <div class="col-xs-12 col-md-8">
+                                        <h5 class="text-primary">Name: {{ item.name }}</h5>
+                                        <p>Address: {{ item.address }}</p>
+                                        <p>Phone Number: {{ item.phone }}</p>
+                                        <p>Email: {{ item.email }}</p>
+                                    </div>
+                                    <div class="button-area col-xs-6 col-md-4">
+                                    	<button class="edit-btn align-middle" type="submit" name="edit-contact"  v-on:click="editContact()">Edit Contact</button>
+                                        <button class="delete-btn align-middle" type="submit" name="del-contact"  v-on:click="delContact()">Delete Contact</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
